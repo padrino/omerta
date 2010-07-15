@@ -33,7 +33,6 @@ Admin.controllers :posts do
   end
 
   put :update, :with => :id do
-    pp params[:post][:body]
     @post = Post.find(params[:id])
     if @post.update_attributes(params[:post])
      flash[:notice] = 'Post was successfully updated.'

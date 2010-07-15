@@ -2,7 +2,11 @@ require File.expand_path(File.dirname(__FILE__) + '/../test_config.rb')
 
 
 context "Post" do
-  setup { Post.delete_all }
+  setup do
+    Blog.delete_all
+    Post.delete_all
+    Account.delete_all
+  end
   
   context "Definition" do 
     setup { Post.make }
@@ -27,6 +31,7 @@ context "Post" do
 
   context "find by permalink" do
     setup { Post.make :title => 'Hello There' }
-    asserts("success") { Post.find_by_permalink('hello_there') }
+    asserts("success") { Post.find_by_permalink('hello-there').first }.exists
+    asserts("error") { Post.find_by_permalink('bad-permalink').first }.nil
   end
 end

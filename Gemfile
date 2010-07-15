@@ -10,7 +10,8 @@ gem 'haml'
 gem 'mongo_mapper'
 gem 'bson_ext', :require => "mongo"
 gem 'disqus'
-gem 'kramdown'
+#gem 'kramdown'
+gem 'rdiscount'
 
 # Test requirements
 gem 'rr', :group => "test"
