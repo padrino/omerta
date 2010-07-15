@@ -8,6 +8,7 @@ Sham.define do
   tagline     { Faker::Lorem.words(8).join(' ')           }
   body        { Faker::Lorem.words(10).join(' ')          }
   tags        { Faker::Lorem.words(1).join                }
+  url         { Faker::Internet.domain_name               }
 end
 
 
@@ -24,6 +25,7 @@ end
 Blog.blueprint do
   title         { Sham.title            }
   tagline       { Sham.tagline          }
+  url           { Sham.url              }
 end
 
 Post.blueprint do
