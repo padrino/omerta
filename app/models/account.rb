@@ -7,16 +7,16 @@ class Account
   # Keys
   key :name,             String
   key :surname,          String
-  key :email,            String
+  key :email,            String,  :required => true
   key :crypted_password, String
   key :salt,             String
-  key :role,             String
-  key :username,         String
+  key :role,             String,  :required => true
+  key :username,         String,  :required => true
+  key :post_ids,         Array,   :typecast => 'ObjectId'
   
-  many :posts
+  many :posts, :in => :post_ids
 
   # Validations
-  validates_presence_of     :email, :role, :username
   validates_presence_of     :password,                   :if => :password_required
   validates_presence_of     :password_confirmation,      :if => :password_required
   validates_length_of       :password, :within => 4..40, :if => :password_required

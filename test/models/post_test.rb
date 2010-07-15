@@ -7,17 +7,17 @@ context "Post" do
   context "Definition" do 
     setup { Post.make }
 
-    asserts_topic.has_key :title,       String,   :required => true
-    asserts_topic.has_key :body,        String,   :required => true
+    asserts_topic.has_key :title,       String,     :required => true
+    asserts_topic.has_key :body,        String,     :required => true
     asserts_topic.has_key :tags,        Array
     asserts_topic.has_key :permalink,   String
-    asserts_topic.has_key :draft,       Boolean,  :default  => true
-    # asserts_topic.has_key :blog_id,     Integer,  :required => true
-    # asserts_topic.has_key :account_id,  Integer,  :required => true
+    asserts_topic.has_key :draft,       Boolean,    :default  => true
+    asserts_topic.has_key :blog_id,     ObjectId,   :required => true
+    asserts_topic.has_key :account_id,  ObjectId,   :required => true
     # 
     # # associations
-    # asserts_topic.has_association :belongs_to, :account
-    # asserts_topic.has_association :belongs_to, :blog    
+    asserts_topic.has_association :belongs_to, :account, :foreign_key => :account_id
+    asserts_topic.has_association :belongs_to, :blog,    :foreign_key => :blog_id
   end
     
   context "permalink generated" do

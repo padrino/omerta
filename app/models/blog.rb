@@ -2,12 +2,13 @@ class Blog
   include MongoMapper::Document
 
   # key <name>, <type>
-  key :title,   String,      :required => true
-  key :url,     String,      :required => true
-  key :tagline, String
+  key :title,     String,      :required => true
+  key :url,       String,      :required => true
+  key :tagline,   String
+  key :post_ids,  Array,       :typecast => 'ObjectId'
   timestamps!
   
-  many :posts
+  many :posts, :foreign_key => :post_ids
 
   validates_uniqueness_of :title, :url
   validates_format_of :url, :with => /^[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/ix

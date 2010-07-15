@@ -10,9 +10,9 @@ context "Blog" do
     asserts_topic.has_key :title,       String, :required => true
     asserts_topic.has_key :url,         String, :required => true
     asserts_topic.has_key :tagline,     String
-
+    asserts_topic.has_key :post_ids,    Array,  :typecast => 'ObjectId'
     # associations
-    asserts_topic.has_association :many, :posts
+    asserts_topic.has_association :many, :posts, :foreign_key => :post_ids
 
     # validations
     asserts_topic.has_validation :validates_uniqueness_of,  :title

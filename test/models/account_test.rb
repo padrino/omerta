@@ -14,9 +14,10 @@ context "Account" do
     asserts_topic.has_key :salt,             String
     asserts_topic.has_key :crypted_password, String
     asserts_topic.has_key :username,         String
-
+    asserts_topic.has_key :post_ids,         Array, :typecast => 'ObjectId'
+    
     # associations
-    asserts_topic.has_association :many, :posts
+    asserts_topic.has_association :many, :posts, :in => :post_ids
 
     # responds to
     asserts_topic.responds_to :password

@@ -31,6 +31,8 @@ end
 Post.blueprint do
  title                   { Sham.title }
  body                    { Sham.body }
- tag_list                { 'test, two' }                 
+ tag_list                { 'test, two' }       
+ blog
+ account          
 end
 
