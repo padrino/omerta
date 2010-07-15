@@ -11,9 +11,9 @@ module Permalink
 
     def permalink_for(name)
       name.downcase.gsub(/\W/, '-').
-                    gsub(/-+/, '-').
-                    gsub(/-$/, '').
-                    gsub(/^-/, '')
+      gsub(/-+/, '-').
+      gsub(/-$/, '').
+      gsub(/^-/, '')
     end
   end
 
@@ -23,9 +23,9 @@ module Permalink
     end
 
     protected
-      def generate_permalink
-        self.permalink = self.class.permalink_for(self[permalink_field])
-      end
+    def generate_permalink
+      self.permalink = self.class.permalink_for(self[permalink_field])
+    end
   end # InstanceMethods
 end # Permalink
 MongoMapper::Document.append_extensions(Permalink::ClassMethods)

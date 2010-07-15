@@ -13,7 +13,7 @@ context "Account" do
        asserts_topic.has_key :email,            String
        asserts_topic.has_key :salt,             String
        asserts_topic.has_key :crypted_password, String
-       asserts_topic.has_key :nickname,         String
+       asserts_topic.has_key :username,         String
        
        # associations
        asserts_topic.has_association :many, :posts
@@ -24,7 +24,7 @@ context "Account" do
    
        # validates presence of
        asserts_topic.has_validation :validates_presence_of, :email
-       asserts_topic.has_validation :validates_presence_of, :nickname
+       asserts_topic.has_validation :validates_presence_of, :username
        asserts_topic.has_validation :validates_presence_of, :role
        asserts_topic.has_validation :validates_presence_of, :password, :if => :password_required
        asserts_topic.has_validation :validates_presence_of, :password_confirmation, :if => :password_required

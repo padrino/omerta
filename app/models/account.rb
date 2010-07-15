@@ -11,12 +11,12 @@ class Account
   key :crypted_password, String
   key :salt,             String
   key :role,             String
-  key :nickname,         String
+  key :username,         String
   
   many :posts
 
   # Validations
-  validates_presence_of     :email, :role, :nickname
+  validates_presence_of     :email, :role, :username
   validates_presence_of     :password,                   :if => :password_required
   validates_presence_of     :password_confirmation,      :if => :password_required
   validates_length_of       :password, :within => 4..40, :if => :password_required
