@@ -11,7 +11,7 @@ gem 'mongo_mapper'
 gem 'bson_ext', :require => "mongo"
 gem 'disqus'
 #gem 'kramdown'
-gem 'rdiscount'
+#gem 'rdiscount'
 
 # Test requirements
 gem 'rr', :group => "test"
