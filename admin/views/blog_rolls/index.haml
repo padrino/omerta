@@ -1,0 +1,33 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active=link_to pat(:list), url(:blog_rolls, :index)
+      %li=link_to pat(:new), url(:blog_rolls, :new)
+  .content
+    %h2.title
+      =pat(:all)
+      =mt(:blog_roll)
+    .inner
+      %table.table
+        %tr
+          %th.first=mat(:blog_roll, :title)
+          %th=mat(:blog_roll, :link)
+          %th=mat(:blog_roll, :description)
+          %th=mat(:blog_roll, :created_at)
+          %th=mat(:blog_roll, :updated_at)
+          %th.last="&nbsp;"
+        -@blog_rolls.each do |blog_roll|
+          %tr
+            %td.first=blog_roll.title
+            %td=blog_roll.link
+            %td=blog_roll.description
+            %td=blog_roll.created_at
+            %td=blog_roll.updated_at
+            %td.last
+              =button_to pat(:edit), url(:blog_rolls, :edit, :id => blog_roll.id), :method => :get, :class => :button_to
+              ="|"
+              =button_to pat(:delete), url(:blog_rolls, :destroy, :id => blog_roll.id), :method => :delete, :class => :button_to
+      .actions-bar.wat-cf
+        .actions="&nbsp;"
+
+-content_for :sidebar, partial("base/sidebar")

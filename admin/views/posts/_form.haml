@@ -1,0 +1,35 @@
+.group
+  =f.label :blog_id
+  =f.error_message_on :blog_id
+  =f.select :blog_id, :class => :select, :collection => @blogs, :fields => [:title, :id]
+  %span.description Ex: a simple text
+
+.group
+  =f.label :title
+  =f.error_message_on :title
+  =f.text_field :title, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :body
+  =f.error_message_on :body
+  =f.text_area :body, :class => :markItUp
+  %span.description Ex: a simple text
+
+.group
+  =f.label :tags
+  =f.error_message_on :tags
+  =f.text_field :tags, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  = f.label :draft
+  = f.error_message_on :draft
+  = f.check_box :draft, :class => :check_box
+  
+.group
+  =f.hidden_field :account_id, :value => session[:_padrino_omerta_admin]
+
+.group.navform.wat-cf
+  =f.submit pat(:save), :class => :button
+  =f.submit pat(:cancel), :onclick => "window.location='#{url(:posts, :index)}';return false", :class => :button

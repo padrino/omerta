@@ -1,0 +1,7 @@
+--- 
+:script: jquery
+:renderer: haml
+:orm: mongomapper
+:test: riot
+:stylesheet: sass
+:mock: rr

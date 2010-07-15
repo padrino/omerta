@@ -1,0 +1,31 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active=link_to pat(:list), url(:settings, :index)
+      %li=link_to pat(:new), url(:settings, :new)
+  .content
+    %h2.title
+      =pat(:all)
+      =mt(:setting)
+    .inner
+      %table.table
+        %tr
+          %th.first=mat(:setting, :blog_name)
+          %th=mat(:setting, :blog_tagline)
+          %th=mat(:setting, :created_at)
+          %th=mat(:setting, :updated_at)
+          %th.last="&nbsp;"
+        -@settings.each do |setting|
+          %tr
+            %td.first=setting.blog_name
+            %td=setting.blog_tagline
+            %td=setting.created_at
+            %td=setting.updated_at
+            %td.last
+              =button_to pat(:edit), url(:settings, :edit, :id => setting.id), :method => :get, :class => :button_to
+              ="|"
+              =button_to pat(:delete), url(:settings, :destroy, :id => setting.id), :method => :delete, :class => :button_to
+      .actions-bar.wat-cf
+        .actions="&nbsp;"
+
+-content_for :sidebar, partial("base/sidebar")
