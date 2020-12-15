@@ -1,19 +1,26 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    activesupport (2.3.8)
+    activesupport (6.1.0)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      tzinfo (~> 2.0)
+      zeitwerk (~> 2.3)
     bson (1.0.4)
     bson_ext (1.0.4)
+    concurrent-ruby (1.1.7)
     daemons (1.1.0)
     disqus (1.0.4)
       json
     eventmachine (0.12.10)
     faker (0.3.1)
     haml (3.0.13)
-    http_router (0.3.3)
-      rack (>= 1.0)
-      url_mount (>= 0.2.1)
-    i18n (0.4.1)
+    http_router (0.11.2)
+      rack (>= 1.0.0)
+      url_mount (~> 0.2.1)
+    i18n (1.8.5)
+      concurrent-ruby (~> 1.0)
     jnunemaker-validatable (1.8.4)
       activesupport (>= 2.3.4)
     json (1.4.3)
@@ -25,12 +32,15 @@ GEM
       mime-types
       treetop (>= 1.4.5)
     mime-types (1.16)
+    minitest (5.14.2)
     mongo (1.0.5)
       bson (>= 1.0.4)
     mongo_mapper (0.8.2)
       activesupport (>= 2.3.4)
       jnunemaker-validatable (~> 1.8.4)
       plucky (~> 0.3.1)
+    mustermann (1.1.1)
+      ruby2_keywords (~> 0.0.1)
     padrino (0.9.14)
       padrino-admin (= 0.9.14)
       padrino-core (= 0.9.14)
@@ -58,13 +68,14 @@ GEM
     plucky (0.3.2)
       mongo (~> 1.0.1)
     polyglot (0.3.1)
-    rack (1.2.1)
+    rack (2.2.3)
     rack-flash (0.1.1)
+      rack
+    rack-protection (2.1.0)
       rack
     rack-test (0.5.4)
       rack (>= 1.0)
     rake (0.8.7)
-    rdiscount (1.6.5)
     riot (0.11.3)
       rr
       term-ansicolor
@@ -72,18 +83,26 @@ GEM
       mongo_mapper (>= 0.8.2)
       riot (>= 0.11.2)
     rr (0.10.11)
-    sinatra (1.0)
-      rack (>= 1.0)
+    ruby2_keywords (0.0.2)
+    sinatra (2.1.0)
+      mustermann (~> 1.0)
+      rack (~> 2.2)
+      rack-protection (= 2.1.0)
+      tilt (~> 2.0)
     term-ansicolor (1.0.5)
     thin (1.2.7)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
-    thor (0.13.7)
+    thor (1.0.1)
+    tilt (2.0.10)
     treetop (1.4.8)
       polyglot (>= 0.3.1)
+    tzinfo (2.0.3)
+      concurrent-ruby (~> 1.0)
     url_mount (0.2.1)
       rack
+    zeitwerk (2.4.2)
 
 PLATFORMS
   ruby
@@ -100,7 +119,6 @@ DEPENDENCIES
   rack-flash
   rack-test
   rake
-  rdiscount
   riot
   riot-mongo_mapper
   rr
