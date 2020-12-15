@@ -2,7 +2,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     activesupport (2.3.8)
-    bson (1.0.4)
+    bson (1.12.5)
     bson_ext (1.0.4)
     daemons (1.1.0)
     disqus (1.0.4)
@@ -64,7 +64,6 @@ GEM
     rack-test (0.5.4)
       rack (>= 1.0)
     rake (0.8.7)
-    rdiscount (1.6.5)
     riot (0.11.3)
       rr
       term-ansicolor
@@ -100,7 +99,6 @@ DEPENDENCIES
   rack-flash
   rack-test
   rake
-  rdiscount
   riot
   riot-mongo_mapper
   rr
