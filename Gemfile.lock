@@ -58,13 +58,12 @@ GEM
     plucky (0.3.2)
       mongo (~> 1.0.1)
     polyglot (0.3.1)
-    rack (1.2.1)
+    rack (2.2.3)
     rack-flash (0.1.1)
       rack
     rack-test (0.5.4)
       rack (>= 1.0)
     rake (0.8.7)
-    rdiscount (1.6.5)
     riot (0.11.3)
       rr
       term-ansicolor
@@ -100,7 +99,6 @@ DEPENDENCIES
   rack-flash
   rack-test
   rake
-  rdiscount
   riot
   riot-mongo_mapper
   rr
